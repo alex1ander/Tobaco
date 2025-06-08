@@ -1,0 +1,41 @@
+$pd-x-container: 60px;
+$containerMaxWidth: 1920px;
+$fontSize: $containerMaxWidth / 80;
+
+:root{
+    --fz: $fontSize;
+}
+
+
+
+
+@mixin button{
+    border: 1px solid #fff!important;
+    font-size: var(--fz);
+    width: fit-content;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+        svg{
+            fill: #000;
+        }
+    }
+}
+
+@mixin input {
+    border: 1px solid #fff!important;
+    font-size: var(--fz);
+    background: none;
+    outline: none!important;
+    padding: 10px 20px;
+    background: #000;
+}
+
+@mixin bgblur{
+    backdrop-filter: blur(8px);
+    background: #11111180;
+}
+
+@mixin transitionTransform{
+    transition: 0.4s ease-in-out transform;
+}

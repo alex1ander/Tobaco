@@ -1,0 +1,24 @@
+.product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+
+    .product-name{
+        font-size: 40px;
+    }
+    .product-category{
+        font-size: var(--fz);
+        color: #828282;
+    }
+
+    .product-image-place{
+        display: flex;
+        width: 100%;
+        img{
+            object-fit: cover;
+            aspect-ratio: 1;
+            width: 100%;
+        }
+    }
+}

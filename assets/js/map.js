@@ -44,11 +44,10 @@ const darkMapStyle = [
   },
 ];
 
-
-
+// Делаем функцию глобальной (в window)
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 40.7128, lng: -74.0060 }, // Нью-Йорк или нужное место
+    center: { lat: 40.7128, lng: -74.0060 },
     zoom: 11,
     styles: darkMapStyle,
   });
@@ -57,14 +56,14 @@ function initMap() {
     position: { lat: 40.7128, lng: -74.0060 },
     map,
     icon: {
-      url: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png", // белая метка
-      scaledSize: new google.maps.Size(27, 43),
+      url: "./assets/icons/pin.png",
+      scaledSize: new google.maps.Size(30, 38),
     },
   });
 
   const infoWindow = new google.maps.InfoWindow({
     content: `
-      <div style="color: #f9a825; font-weight: bold;">Mackbellzy Armenia</div>
+      <div style="color: #CFB784; font-weight: bold;">Mackbellzy Armenia</div>
       <div style="color: #fff;">146 Sheikh Zayed Rd - Al Wasl, Dubai, UAE<br>
       7 Ուլիխ Փողոց | mackbellzy.am</div>`,
   });
@@ -73,3 +72,6 @@ function initMap() {
     infoWindow.open(map, marker);
   });
 }
+
+// Обязательно сделать функцию глобальной
+window.initMap = initMap;

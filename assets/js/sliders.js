@@ -1,15 +1,15 @@
-const productSlider = new Swiper('.product-slider', {
+const productPreviewSlider = new Swiper('.products-preview-slider', {
     slidesPerView: 2,
     slidesPerGroup: 2,
     spaceBetween: 10,
     navigation: {
-        nextEl: '.product-slider .swiper-button-next',
-        prevEl: '.product-slider .swiper-button-prev',
+        nextEl: '.products-preview-slider .swiper-button-next',
+        prevEl: '.products-preview-slider .swiper-button-prev',
     },
     pagination: {
-        el: ".product-slider .swiper-pagination",
+        el: ".products-preview-slider .swiper-pagination",
         type: "fraction",
-      },
+    },
     loop: false,
     breakpoints: {
         // когда ширина <= 768px, показывать 1 слайд за группу
@@ -23,6 +23,52 @@ const productSlider = new Swiper('.product-slider', {
         }
     },
 });
+
+
+
+var categoryNavSlider = new Swiper(".category-nav-slider", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    centeredSlides: true,
+    // loop: true,
+    navigation: {
+        nextEl: '.category-nav-slider .swiper-button-next',
+        prevEl: '.category-nav-slider .swiper-button-prev',
+    },
+});
+
+
+
+// Навигационный слайдер
+var productswipersNavSlider = new Swiper(".products-nav-slider", {
+    direction: 'vertical',
+    autoHeight: true,
+    slidesPerView: 3,
+    spaceBetween: 40,
+    centeredSlides: true,
+    pagination: {
+        el: ".products-nav-slider-tools .swiper-pagination",
+        type: "fraction",
+    },
+    navigation: {
+        nextEl: '.products-nav-slider-tools .swiper-btn-next',
+        prevEl: '.products-nav-slider-tools .swiper-btn-prev',
+    },
+});
+
+// Основной слайдер
+var productsSlider = new Swiper(".products-slider", {
+    direction: 'vertical',
+    autoHeight: true,
+    slidesPerView: 1,
+});
+
+
+// === Двусторонняя синхронизация ===
+productsSlider.controller.control = productswipersNavSlider;
+productswipersNavSlider.controller.control = productsSlider;
+
+
 
 
 var imageSlider = new Swiper(".image-slider", {
@@ -82,4 +128,32 @@ var brandsBigSlider = new Swiper(".brands-big-slider", {
         }
     },
 
+});
+
+
+var peronalSlider = new Swiper(".personal-slider", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.personal-slider .swiper-button-next',
+        prevEl: '.personal-slider .swiper-button-prev',
+    },
+    pagination: {
+        el: ".personal-slider .swiper-pagination",
+        type: "fraction",
+      },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        500:{
+            slidesPerView: 2,
+        },
+        769:{
+            slidesPerView: 3,
+        },
+        1400:{
+             slidesPerView: 5,
+        }
+    },
 });

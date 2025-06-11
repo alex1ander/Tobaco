@@ -9,8 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="./assets/css/main.css">
-        <script type="module" src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
     <script type="module" src="./assets/js/sliders.js"></script>
+    <script src="./assets/js/map.js"></script>
 
 </head>
 <body>
@@ -18,15 +19,21 @@
         <div class="header-container container">
             <div class="part-content mobile-adaptive">
                 <div class="logo-place">
-                    <object type="image/svg+xml" data="/assets/icons/macb_logo.svg" width="80" height="62"></object>
+                    <object type="image/svg+xml" data="./assets/icons/macb_logo.svg" width="80" height="62"></object>
                 </div>
 
-                <div class="lang-switcher-place">
-                    <div class="lang-switcher">
-                        <span>En</span>
+                <div class="lang-switcher">
+                    <div id="lang-switcher-head" class="lang-switcher-head">
+                        <span>EN</span>
                         <svg width="10" height="5">
                             <use xlink:href="#triangle"></use>
                         </svg>
+                    </div>
+                    <div id="lang-switcher-list" class="lang-switcher-list">
+                        <ul>
+                            <li><a href="#">EN</a></li>
+                            <li><a href="#">RU</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -101,11 +108,11 @@
         <section class="products-section">
 
             <div class="container">
-                <div class="swiper product-slider">
+                <div class="swiper products-preview-slider">
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="product-card">
+                            <div class="product-preview-card">
                                 <h3 class="product-name">MACBELLZY</h3>
                                 <span class="product-category">BLACK TOBACCO</span>
                                 <div class="product-image-place">
@@ -116,7 +123,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="product-card">
+                            <div class="product-preview-card">
                                 <h3 class="product-name">MACBELLZY</h3>
                                 <span class="product-category">GOLD TOBACCO</span>
                                 <div class="product-image-place">
@@ -128,7 +135,7 @@
 
 
                         <div class="swiper-slide">
-                            <div class="product-card">
+                            <div class="product-preview-card">
                                 <h3 class="product-name">MACBELLZY</h3>
                                 <span class="product-category">BLACK TOBACCO</span>
                                 <div class="product-image-place">
@@ -139,7 +146,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <div class="product-card">
+                            <div class="product-preview-card">
                                 <h3 class="product-name">MACBELLZY</h3>
                                 <span class="product-category">GOLD TOBACCO</span>
                                 <div class="product-image-place">
@@ -293,7 +300,8 @@
 
 
                 <div class="map-part">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139177.94111994002!2d23.964269852073322!3d56.97183632770111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2z0KDQuNCz0LAsINCb0LDRgtCy0LjRjw!5e0!3m2!1sru!2shu!4v1749297058359!5m2!1sru!2shu" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139177.94111994002!2d23.964269852073322!3d56.97183632770111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2z0KDQuNCz0LAsINCb0LDRgtCy0LjRjw!5e0!3m2!1sru!2shu!4v1749297058359!5m2!1sru!2shu" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    <div id="map"></div>
                 </div>
             </div>
 
@@ -486,16 +494,245 @@
             </div>
         </setion>
 
-    </main>
-    <footer>
 
+        <setion class="personal-section">
+            <div class="section-title container">
+                <h2>OUR TEAM</h2>
+            </div>
+            <div class="container">
+                <div class="swiper personal-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="personal-card">
+                                <img class="personal-photo" src="./uploads/team1.png" alt="">
+                                <h4 class="personal-name">Andrew John</h4>
+                                <span class="personal-role">CEO</span>
+                                <div class="personal-contacts">
+                                    <svg width="32" height="25">
+                                        <use xlink:href="#mail"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                
+                    </div>
+
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination lined-around"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev">
+                        <svg  width="8" height="14">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg  width="8" height="14">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="instagram-section">
+            <div class="section-title container">
+                <div class="instagram-head">
+                    <div class="logo-place circle">
+                        <object type="image/svg+xml" data="./assets/icons/macb_logo.svg" width="80" height="62"></object>
+                    </div>
+                    <a class="instagram-link" href="#">@macbellzy</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="inst-place"></div>
+            </div>
+        </section>
+        
+        <section class="contact-us-section">
+            <div class="section-title container">
+                <h2>CONTACT US</h2>
+            </div>
+            <div class="container">
+                <div class="contact-us-area">
+                    <div class="contact-us-info">
+                        <div class="logo-place">
+                            <object type="image/svg+xml" data="./assets/icons/macb_logo2.svg" width="232" height="41"></object>
+                        </div>
+
+                        <div class="contact-us-text">
+                            <p>Hookah tobacco Macbellzy tobacco.</p> 
+                            <p>Ingredients: Tobacco, food glycerin, glucose syrup, flavors.
+                            Produced: " ART TOBACCO GROUP " LLC.</p>
+                            <p>1 Davit Hovhannesi street, b. 19, ob. 20 c.Yerevan, Arabkir, Armenia</p>
+                            <p>www.macbellzy.com</p>
+                            <p>info@macbellzy.com</p>
+                        </div>
+
+                        <div class="contact-us-links">
+                            <div class="current-link-block">
+                                <span>CONTACT US IN  TELEGRAM</span>
+                                <a href="#" class="circle-svg circle-svg-telegram">
+                                    <svg  width="24" height="24" viewBox="0 0 24 24">
+                                        <use xlink:href="#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="current-link-block">
+                                <span>CONTACT US IN WHATSAPP</span>
+                                <a href="#" class="circle-svg circle-svg-whatsapp">
+                                    <svg  width="24" height="24" viewBox="0 0 24 24">
+                                        <use xlink:href="#whatsapp"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-us-form-place">
+                        <form class="contact-us-form" action="#">
+                            <input type="text" name="name" placeholder="Name:">
+                            <div class="two-input-place">
+                                <input type="email" name="email" placeholder="E-mail:">
+                                <input type="tel" name="tel"  placeholder="Phone:">
+                            </div>
+                            <textarea name="message"  placeholder="Message:"></textarea>
+                            <button type="submit" class="btn">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class>
+        <div class="footer-container container">
+            <div class="useful-links objects-delimer">
+                <a href="#">Privacy police</a>
+                <a href="#">Return policy</a>
+            </div>
+            <div class="copyright-place">
+                <div class="objects-delimer">
+                    <span>COPYRIGHT © 2025</span>
+                    <a href="#" class="text-gray">macbellzy.com</a>
+                </div>
+                <span>Designed & Developed by <a href="#" class="text-yellow text-underline">Xezero Solutions</a></span>
+            </div>
+            <div class="our-links">
+                <a href="#">
+                    <svg width="32" height="32">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="32" height="32">
+                        <use xlink:href="#instagram"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="32" height="32">
+                        <use xlink:href="#tiktok"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="32" height="32">
+                        <use xlink:href="#telegram"></use>
+                    </svg>
+                </a>
+                 <a href="#">
+                    <svg width="32" height="32">
+                        <use xlink:href="#vk"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </footer>
     <video id="bg-fixed-video" autoplay muted loop>
         <source src="./uploads/bg.mp4" type="video/mp4">
     </video>
 </body>
 <script>
-    fetch('assets/icons/sprite.svg')
+    fetch('./assets/icons/sprite.svg')
         .then(response => response.text())
         .then(svg => {
             const div = document.createElement('div');
@@ -506,4 +743,9 @@
         .catch(err => console.error('Ошибка загрузки спрайта:', err));
 
 </script>
+<script>
+
+  </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbzbgRT9EbCAiBVtaMoRJ4zqsAnaCFeYM&callback=initMap" async defer></script>
 </html>
+

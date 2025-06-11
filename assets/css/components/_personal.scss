@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+.personal-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+    .personal-photo{
+        aspect-ratio: 1;
+        height: 100%;
+        width: 100%;
+        max-height: 160px;
+        max-width:  160px;
+    }
+
+    .personal-role{
+        color:#828282;
+    }
+}

@@ -1,15 +1,15 @@
+@use "sass:math";
 $pd-x-container: 60px;
 $containerMaxWidth: 1920px;
-$fontSize: $containerMaxWidth / 80;
+$fontSize: math.div($containerMaxWidth, 80);
 
 :root{
     --fz: $fontSize;
 }
 
 
-
-
 @mixin button{
+    background: none;
     border: 1px solid #fff!important;
     font-size: var(--fz);
     width: fit-content;
@@ -23,12 +23,20 @@ $fontSize: $containerMaxWidth / 80;
 }
 
 @mixin input {
-    border: 1px solid #fff!important;
+    border: 1px solid #ffffff80;
     font-size: var(--fz);
     background: none;
     outline: none!important;
     padding: 10px 20px;
     background: #000;
+    &:focus{
+        border: 1px solid #fff;
+    }
+    &:-webkit-autofill{
+        font-size: 24px;
+        -webkit-transition-delay: 9999s;
+        transition-delay: 9999s;
+    }
 }
 
 @mixin bgblur{
@@ -38,4 +46,28 @@ $fontSize: $containerMaxWidth / 80;
 
 @mixin transitionTransform{
     transition: 0.4s ease-in-out transform;
+}
+
+
+@mixin transitionProperties($properties...) {
+  $transitions: ();
+  @each $prop in $properties {
+    $transitions: if(length($transitions) == 0,
+      "#{$prop} 0.4s ease-in-out",
+      #{$transitions + ", #{$prop} 0.4s ease-in-out"}
+    );
+  }
+  transition: #{$transitions};
+}
+
+
+
+.text-yellow{
+    color: #CFB784!important;
+}
+.text-gray{
+    color: #828282!important;
+}
+.text-underline{
+    text-decoration: underline!important;
 }

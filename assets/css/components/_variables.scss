@@ -1,4 +1,5 @@
 @use "sass:math";
+@use 'sass:list';
 $pd-x-container: 60px;
 $containerMaxWidth: 1920px;
 $fontSize: math.div($containerMaxWidth, 80);
@@ -9,10 +10,15 @@ $fontSize: math.div($containerMaxWidth, 80);
 
 
 @mixin button{
+    cursor: pointer;
     background: none;
     border: 1px solid #fff!important;
     font-size: var(--fz);
     width: fit-content;
+    @include transitionProperties(color,background-color);
+    svg{
+        @include transitionProperties(fill);
+    }
     &:hover {
         background-color: #fff;
         color: #000;
@@ -51,14 +57,15 @@ $fontSize: math.div($containerMaxWidth, 80);
 
 @mixin transitionProperties($properties...) {
   $transitions: ();
+
   @each $prop in $properties {
-    $transitions: if(length($transitions) == 0,
-      "#{$prop} 0.4s ease-in-out",
-      #{$transitions + ", #{$prop} 0.4s ease-in-out"}
-    );
+    $transitions: list.append($transitions, #{$prop} 0.4s ease-in-out, $separator: comma);
   }
-  transition: #{$transitions};
+
+  transition: $transitions;
 }
+
+
 
 
 
